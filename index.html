@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yug Rokadia // Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23060a06'/%3E%3Crect x='1' y='1' width='62' height='62' rx='7' fill='none' stroke='%2300ff41' stroke-width='1.5' opacity='0.6'/%3E%3Crect x='4' y='4' width='8' height='2' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='4' y='4' width='2' height='8' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='52' y='4' width='8' height='2' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='62' y='4' width='2' height='8' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='4' y='58' width='8' height='2' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='4' y='52' width='2' height='8' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='52' y='58' width='8' height='2' fill='%2300ff41' opacity='0.4'/%3E%3Crect x='62' y='52' width='2' height='8' fill='%2300ff41' opacity='0.4'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='28' font-weight='900' fill='%2300ff41' text-anchor='middle' filter='url(%23glow)'%3EYR%3C/text%3E%3Cline x1='10' y1='48' x2='54' y2='48' stroke='%2300ff41' stroke-width='1' opacity='0.3'/%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1.5' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23060a06'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='28' font-weight='900' fill='%2300ff41' text-anchor='middle'%3EYR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -104,8 +107,8 @@ section{position:relative;z-index:1;padding:6rem 0 4rem;min-height:100vh}
 .btn.secondary{border-color:var(--cyan);color:var(--cyan)}
 .btn.secondary::before{background:rgba(0,229,255,0.1)}
 .btn.secondary:hover{box-shadow:0 0 20px rgba(0,229,255,0.3)}
-.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:var(--text-dim);font-size:0.7rem;letter-spacing:2px;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+.scroll-hint{display:block;margin-top:2.5rem;color:var(--text-dim);font-size:0.7rem;letter-spacing:2px;animation:bounce 2s infinite;text-align:center}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
 /* SECTION HEADERS */
 .section-header{margin-bottom:3rem}
