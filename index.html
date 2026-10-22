@@ -9,15 +9,15 @@
 <style>
 :root{color-scheme:light;--bg:#f2f3fb;--ink:#14142b;--b:#3b4cff;--p:#ff3d81;--g:#b6f23a;--y:#ffd23f;--pf:'Press Start 2P','Courier New',monospace;--f:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+html{font-size:clamp(16px,calc(11px + .45vw),24px);scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.6rem)}
 body{margin:0;background:var(--bg) linear-gradient(rgba(20,20,43,.05) 1px,transparent 1px) 0 0/32px 32px;background-image:linear-gradient(rgba(20,20,43,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,43,.05) 1px,transparent 1px);color:var(--ink);font-family:var(--f);line-height:1.55;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:95}
 a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
 :focus-visible{outline:3px solid var(--p);outline-offset:3px}
 .pf{font-family:var(--pf);line-height:1.6;font-weight:400}
-.wrap{width:min(1080px,100% - 40px);margin-inline:auto;position:relative;z-index:1}
+.wrap{width:min(1280px,100% - 40px);margin-inline:auto;position:relative;z-index:1}
 /* HUD */
-#hud{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:90;height:56px;background:#fff;border-bottom:3px solid var(--ink);display:flex;align-items:center;gap:14px;padding:0 max(16px,env(safe-area-inset-left,0px));font-family:var(--pf);font-size:.6rem}
+#hud{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:90;height:3.5rem;background:#fff;border-bottom:3px solid var(--ink);display:flex;align-items:center;gap:14px;padding:0 max(16px,env(safe-area-inset-left,0px));font-family:var(--pf);font-size:.6rem}
 #hud svg{width:24px;height:27px;flex:none}
 .xp{flex:1;height:18px;border:3px solid var(--ink);background:#fff;position:relative;min-width:50px}
 .xp i{position:absolute;inset:0;width:0;background:repeating-linear-gradient(90deg,var(--g) 0 8px,#8fcf17 8px 10px)}
@@ -25,19 +25,19 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:po
 .hb:active{background:var(--y)}
 #sc{min-width:7ch;text-align:right}
 @media(max-width:560px){#hud{gap:8px;font-size:.5rem}#hud svg,.hs{display:none}}
-main{padding-top:56px}
+main{padding-top:3.5rem}
 /* title */
-#start{min-height:calc(100svh - 56px);display:flex;align-items:center;position:relative;overflow:hidden;padding:30px 0 50px}
+#start{min-height:calc(100svh - 3.5rem);display:flex;align-items:center;position:relative;overflow:hidden;padding:30px 0 50px}
 #px{position:absolute;inset:0;pointer-events:none}
 .pxl{position:absolute;bottom:-20px;animation:fl linear infinite}
 @keyframes fl{to{transform:translateY(-110vh) rotate(90deg)}}
 .hero{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-h1{margin:0;font-size:clamp(2rem,9.4vw,6.4rem);line-height:1.1;letter-spacing:-.02em;text-shadow:4px 4px 0 var(--p),8px 8px 0 var(--b)}
+h1{margin:0;font-size:clamp(2rem,9.4vw,7.2rem);line-height:1.1;letter-spacing:-.02em;text-shadow:4px 4px 0 var(--p),8px 8px 0 var(--b)}
 h1 .row{display:block;white-space:nowrap}
 h1 .l{display:inline-block;transition:transform .18s steps(3);cursor:default}
 h1 .l:hover{transform:translateY(-.22em)}
-.hero svg{width:clamp(90px,15vw,190px);height:auto;animation:bob 1.2s steps(2) infinite;filter:drop-shadow(8px 8px 0 rgba(20,20,43,.18))}
-@keyframes bob{50%{transform:translateY(-12px)}}
+.hero svg{width:clamp(90px,15vw,230px);height:auto;animation:bob 1.4s ease-in-out infinite;filter:drop-shadow(8px 8px 0 rgba(20,20,43,.18))}
+@keyframes bob{50%{transform:translateY(14px)}}
 .role{margin:32px 0 30px;font-size:clamp(.7rem,1.8vw,1rem)}
 .blink{animation:bl 1s steps(2) infinite;text-decoration:none}@keyframes bl{50%{opacity:0}}
 .btn{font-family:var(--pf);font-size:.8rem;padding:16px 22px;border:3px solid var(--ink);background:var(--y);box-shadow:5px 5px 0 var(--ink);display:inline-block;transition:transform .1s,box-shadow .1s}
@@ -113,7 +113,26 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 @keyframes tin{from{transform:translateX(120%)}}@keyframes tout{to{transform:translateX(130%)}}
 .cf{position:fixed;left:50%;top:45%;width:12px;height:12px;z-index:130;pointer-events:none;animation:cf 1.3s ease-out forwards}
 @keyframes cf{to{transform:translate(var(--x),var(--y)) rotate(360deg);opacity:0}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.rv{opacity:1;transform:none}.pxl{display:none}html{scroll-behavior:auto}}
+.fl{opacity:0}
+.fl.in{opacity:1;animation:flyL .9s cubic-bezier(.22,1.1,.36,1) backwards;animation-delay:var(--d,0s)}
+.fl.r.in{animation-name:flyR}
+@keyframes flyL{from{opacity:0;transform:translateX(calc(var(--fx,140px)*-1))}}
+@keyframes flyR{from{opacity:0;transform:translateX(var(--fx,140px))}}
+@media(max-width:760px){.fl{--fx:70px}}
+body.rm *,body.rm *::before,body.rm *::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+body.rm .rv,body.rm .fl{opacity:1;transform:none}
+body.rm .pxl{display:none}
+.btn.pk{background:var(--p);color:#fff}
+.cont.hot{animation:shk .25s steps(2) infinite}#cd.hot{color:var(--p)}
+@keyframes shk{50%{transform:translate(3px,-2px)}}
+.ov2{position:fixed;inset:0;z-index:200;background:rgba(20,20,43,.94);display:flex;align-items:center;justify-content:center;padding:20px;color:#fff;text-align:center;animation:fadeo .3s steps(3)}
+.ov2[hidden]{display:none}
+@keyframes fadeo{from{opacity:0}}
+.gb{display:grid;gap:22px;justify-items:center;max-width:640px}
+.gb p{margin:0;font-size:clamp(.6rem,2vw,.9rem)}.gb b{font-weight:400;color:var(--y)}
+.gb .gm2{font-family:var(--f);font-size:1.05rem;color:#d8daf5}
+.go{margin:0;font-size:clamp(1.6rem,8vw,4.4rem);color:var(--p);text-shadow:4px 4px 0 var(--b);animation:glt .6s steps(2) infinite}
+@keyframes glt{50%{transform:translate(4px,-3px);text-shadow:-4px 3px 0 var(--g)}}
 </style>
 </head>
 <body>
@@ -126,6 +145,7 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 <p class="pf role"><span id="ty"></span><u class="blink">_</u></p>
 <div class="bl2"><button class="btn" id="go">PRESS START</button><a class="btn w" href="mailto:yug.rokadia@gmail.com">EMAIL</a></div>
 <p class="hint">Click the letters. Clear the bosses. Find the hidden code.</p>
+
 </div><div id="hs" aria-hidden="true"></div>
 </div></section>
 
@@ -142,7 +162,7 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 
 <section class="lv" id="l3" data-n="4"><div class="wrap">
 <div class="lh rv"><span class="tl">LEVEL 3</span><h2>High scores</h2></div>
-<div class="sb rv" id="sb"></div>
+<div class="sb fl" id="sb"></div>
 </div></section>
 
 <section class="lv" id="l4" data-n="5"><div class="wrap">
@@ -152,7 +172,7 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 
 <section class="lv" id="l5" data-n="6"><div class="wrap">
 <div class="lh rv"><span class="tl">LEVEL 5</span><h2>Lore</h2></div>
-<div class="lore rv">
+<div class="lore">
 <div><span class="pf">PUBLISHED / WILEY</span>Cryptographic Overwrite-based Secure Data Deletion for Heterogeneous Storage Devices</div>
 <div><span class="pf">ACCEPTED / SPRINGER</span>GLIRE: Predictive Congestion-Aware Routing Inspired by Gravitational Lensing (Winter 2027)</div>
 <div><span class="pf">HACKATHONS</span>Smart India Hackathon 2024 internal winner. Team lead, Hyphen Ideathon 2024, Google Developer’s Student Club.</div>
@@ -161,7 +181,7 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 
 <section class="lv" id="bonus" data-n="7"><div class="wrap">
 <div class="lh rv"><span class="tl">BONUS</span><h2>Threat hunter</h2></div>
-<div class="card gm rv">
+<div class="card gm fl r">
 <div class="gt pf"><span>SCORE <b id="gs" style="font-weight:400">0</b></span><span>LIVES <b id="gl" style="font-weight:400">3</b></span><span>BEST <b id="gh" style="font-weight:400">0</b></span></div>
 <div class="gw"><canvas id="gc" aria-label="Threat hunter game"></canvas>
 <div class="ov" id="ov"><p class="pf" id="om">Tap the red threats before they reach the bottom. Leave the green safe packets alone.</p><button class="btn" id="gb">START</button></div></div>
@@ -169,15 +189,19 @@ footer{padding:26px 0 50px;font-size:.88rem;color:#5a5c75;display:flex;justify-c
 
 <section class="lv" id="end" data-n="8"><div class="wrap">
 <h2 class="cont pf rv">CONTINUE? <span id="cd">9</span></h2>
-<div class="bl2 rv"><a class="btn" href="mailto:yug.rokadia@gmail.com">EMAIL</a><a class="btn w" href="https://www.linkedin.com/in/yug-rokadia" target="_blank" rel="noopener">LINKEDIN</a><a class="btn w" href="https://github.com/YugRokadia" target="_blank" rel="noopener">GITHUB</a></div>
+<p class="hint" style="margin:-14px 0 26px">The timer runs while you stay here. Insert a coin to reset it, or let it hit zero.</p>
+<div class="bl2 rv"><button class="btn pk" id="coin">INSERT COIN</button><a class="btn" href="mailto:yug.rokadia@gmail.com">EMAIL</a><a class="btn w" href="https://www.linkedin.com/in/yug-rokadia" target="_blank" rel="noopener">LINKEDIN</a><a class="btn w" href="https://github.com/YugRokadia" target="_blank" rel="noopener">GITHUB</a></div>
 <footer><span>© 2026 Yug Rokadia · yug.rokadia@gmail.com</span><span>+91 9372371099</span></footer>
 </div></section>
 </main>
+<div id="go2" class="ov2" role="dialog" aria-modal="true" aria-label="Game over" hidden><div class="gb"><h2 class="pf go">GAME OVER</h2><p class="pf">FINAL SCORE <b id="fs">000000</b></p><p class="pf">★ <span id="fa">0</span>/5 ACHIEVEMENTS</p><p class="gm2">Time ran out, but you can still reach me.</p><div class="bl2"><button class="btn" id="pa">PLAY AGAIN</button><a class="btn w" href="mailto:yug.rokadia@gmail.com">EMAIL ME</a><button class="btn w" id="pk">KEEP BROWSING</button></div></div></div>
 <div id="ts" aria-live="polite"></div>
 
 <script>
 var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
-var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var rm=false;
+
+document.body.classList.toggle('rm',rm);
 function sprite(m,c){var r='';m.forEach(function(row,y){row.split('').forEach(function(ch,x){if(c[ch])r+='<rect x="'+x+'" y="'+y+'" width="1" height="1" fill="'+c[ch]+'"/>'})});return'<svg viewBox="0 0 '+m[0].length+' '+m.length+'" shape-rendering="crispEdges" aria-hidden="true">'+r+'</svg>'}
 var SH=['KKKKKKKKK','KBBBBBBBK','KBWBBBWBK','KBBWBWBBK','KBBBWBBBK','KBBBBBBBK','.KBBBBBK.','..KBBBK..','...KBK...','....K....'],CL={K:'#14142b',B:'#3b4cff',W:'#fff'};
 $('#av').innerHTML=sprite(SH,CL);$('#hs').innerHTML=sprite(SH,CL);
@@ -192,8 +216,8 @@ $('#go').onclick=function(){ach('start');beep(520);$('#l1').scrollIntoView({beha
 // title letters + typewriter + floating pixels
 $$('.tt').forEach(function(r){r.innerHTML=r.textContent.split('').map(function(c){return'<span class="l">'+c+'</span>'}).join('')});
 $$('.l').forEach(function(l){l.addEventListener('mouseenter',function(){beep(300+Math.random()*500,.05)});l.addEventListener('click',function(){add(5);beep(700,.06)})});
-var roles=['SECURITY ENGINEER','SYSTEMS BUILDER','ML TINKERER','SIEM WRANGLER'],ri=0,ci=0,del=false,ty=$('#ty');
-(function t(){var w=roles[ri];if(rm){ty.textContent=w;return}ci+=del?-1:1;ty.textContent=w.slice(0,ci);var d=del?35:75;if(!del&&ci==w.length){del=true;d=1400}else if(del&&ci==0){del=false;ri=(ri+1)%roles.length;d=300}setTimeout(t,d)})();
+var roles=['SECURITY ENGINEER','LOG WHISPERER','PACKET WATCHER','CONTAINER WRANGLER','ML TINKERER','PUBLISHED RESEARCHER','FULL-STACK BUILDER'],ri=0,ci=0,del=false,ty=$('#ty'),tyT;
+function t(){clearTimeout(tyT);var w=roles[ri];if(rm){ty.textContent=roles[0];return}ci+=del?-1:1;ty.textContent=w.slice(0,ci);var d=del?35:75;if(!del&&ci==w.length){del=true;d=1100}else if(del&&ci==0){del=false;ri=(ri+1)%roles.length;d=300}tyT=setTimeout(t,d)}t();
 var cols=['#3b4cff','#ff3d81','#b6f23a','#ffd23f'];
 for(var i=0;i<16;i++){var p=document.createElement('i');p.className='pxl';var z=8+Math.random()*14;p.style.cssText='left:'+Math.random()*100+'%;width:'+z+'px;height:'+z+'px;background:'+cols[i%4]+';opacity:.5;animation-duration:'+(10+Math.random()*14)+'s;animation-delay:-'+Math.random()*20+'s';$('#px').appendChild(p)}
 // projects
@@ -201,12 +225,12 @@ var P=[['DeployX','BOSS 1','3','release strategies: blue-green, canary, rolling'
 ['Goldfish Semantic Search','BOSS 2','<200 ms','retrieval time','Natural-language search that stays in sync with your files and email.',['File watcher plus Gmail and Outlook ingestion keep the index fresh.','SQLite metadata layer and hybrid retrieval with embeddings, vector search and RAG.'],'Python,Tauri 2,SQLite,RAG'],
 ['Network Packet Sniffer','BOSS 3','17','protocols classified from live traffic','C++ libpcap capture engine with TLS SNI extraction.',['Python TUI shows top talkers and DNS queries and flags suspicious activity.','Runs on a Raspberry Pi 4B as a secondary router for remote SSH inspection.'],'C++,Python,Linux,Networking'],
 ['Payload detection in model weights','BOSS 4','97%','detection accuracy, up to','A Graph Attention Network that finds payloads hidden inside neural network weights.',['Trained 60+ CNNs and built clean and corrupted datasets.','Engineered 22 byte-level statistical features.'],'Python,GNN,Steganography']];
-$('#pj').innerHTML=P.map(function(d){return'<button class="card pj rv" aria-expanded="false"><div class="top pf"><span>'+d[1]+'</span><span class="stamp">CLEARED</span></div><h3>'+d[0]+'</h3><div class="big pf">'+d[2].replace('<','&lt;')+'</div><div class="lab">'+d[3]+'</div><div class="hp"><i></i></div><div class="det"><div><p>'+d[4]+'</p><ul>'+d[5].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><div class="tg">'+d[6].split(',').map(function(x){return'<span>'+x+'</span>'}).join('')+'</div></div></div></button>'}).join('');
+$('#pj').innerHTML=P.map(function(d){return'<button class="card pj fl" aria-expanded="false"><div class="top pf"><span>'+d[1]+'</span><span class="stamp">CLEARED</span></div><h3>'+d[0]+'</h3><div class="big pf">'+d[2].replace('<','&lt;')+'</div><div class="lab">'+d[3]+'</div><div class="hp"><i></i></div><div class="det"><div><p>'+d[4]+'</p><ul>'+d[5].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><div class="tg">'+d[6].split(',').map(function(x){return'<span>'+x+'</span>'}).join('')+'</div></div></div></button>'}).join('');
 $$('.pj').forEach(function(c){c.onclick=function(){var o=c.classList.toggle('cl');c.setAttribute('aria-expanded',o);if(o&&!c.dataset.d){c.dataset.d=1;add(100)}if(o){beep(440,.07);setTimeout(function(){beep(660,.1)},90);ach('boss')}}});
 // quests
 var Q=[['Information Security Intern','RXIL (Receivables Exchange of India) · Mumbai · May to July 2026',['Built and deployed a SIEM pipeline on the ELK stack for Windows and Linux servers, with reporting dashboards.','Ran VAPT assessments and reported findings with remediation advice, including 1 high-severity finding.','Supported ISO/IEC 27001 GRC work: control reviews, documentation, risk identification.'],'600,000+ events a day processed'],
 ['AI/ML Software Intern','Crocus IT · Remote (Texas, USA) · June to August 2025',['Built full-stack services with React, TypeScript, Flask, REST APIs and PostgreSQL in an Agile team.','Wrote ML pipelines that turn image and video detections into structured metadata for LLM-based querying.','Added Google OAuth, JWT and password hashing, and helped deploy Docker apps on AWS EC2.'],'40%+ less rebuffering with HLS']];
-$('#qs').innerHTML=Q.map(function(q){return'<div class="card qt rv"><h3>'+q[0]+'</h3><div class="m">'+q[1]+'</div><ul>'+q[2].map(function(x,k){return'<li style="--k:'+k+'">'+x+'</li>'}).join('')+'</ul><div class="rw pf">REWARD: '+q[3]+'</div></div>'}).join('');
+$('#qs').innerHTML=Q.map(function(q){return'<div class="card qt fl"><h3>'+q[0]+'</h3><div class="m">'+q[1]+'</div><ul>'+q[2].map(function(x,k){return'<li style="--k:'+k+'">'+x+'</li>'}).join('')+'</ul><div class="rw pf">REWARD: '+q[3]+'</div></div>'}).join('');
 // scores
 var H=[['600000','+','security events a day (RXIL)'],['97','%','payload detection accuracy, up to'],['60','+','CNNs trained'],['17','','protocols classified'],['40','%+','less rebuffering (Crocus IT)'],['200',' ms','Goldfish retrieval, under']],ord=['1ST','2ND','3RD','4TH','5TH','6TH'];
 $('#sb').innerHTML=H.map(function(h,i){return'<div><span class="'+(i<1?'r':'')+' pf">'+ord[i]+'</span><em>'+h[2]+'</em><b class="pf" data-n="'+h[0]+'" data-s="'+h[1]+'">0</b></div>'}).join('');
@@ -219,12 +243,26 @@ $$('.it').forEach(function(b){b.onclick=function(){var o=b.classList.toggle('eq'
 function count(el){var n=+el.dataset.n,s=el.dataset.s||'',t0=null;function f(t){t0=t0||t;var k=Math.min((t-t0)/1500,1);el.textContent=Math.round(n*(1-Math.pow(1-k,3))).toLocaleString('en-US')+s;if(k<1)requestAnimationFrame(f)}rm?el.textContent=n.toLocaleString('en-US')+s:requestAnimationFrame(f)}
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');$$('[data-n]',e.target).forEach(count);io.unobserve(e.target)}})},{threshold:.15});
 $$('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+$$('.lore>div').forEach(function(e){e.classList.add('fl')});
+$$('.fl').forEach(function(el){var i=[].indexOf.call(el.parentNode.children,el);if(i%2)el.classList.add('r');el.style.setProperty('--d',(i%2?.12:0)+'s');io.observe(el)});
+
+
+$('#hs').style.cursor='pointer';$('#hs').onclick=function(){$('#go').click()};
 // level + xp
 var secs=$$('section[data-n]');
 function upd(){var h=document.documentElement,p=scrollY/Math.max(1,h.scrollHeight-innerHeight);$('#xi').style.width=Math.min(100,p*100)+'%';var n=1;secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)n=+s.dataset.n});$('#lv').textContent=n;if(p>.97)ach('end')}
 addEventListener('scroll',upd,{passive:true});upd();
 // continue countdown
-var cd=9;setInterval(function(){cd=cd?cd-1:9;$('#cd').textContent=cd},1000);
+var cd=9,cdOn=false,dead=false;
+function cdu(){$('#cd').textContent=cd;$('#cd').classList.toggle('hot',cd<=3);$('.cont').classList.toggle('hot',cd<=3)}
+function die(){dead=true;$('#fs').textContent=String(S).padStart(6,'0');$('#fa').textContent=Object.keys(got).length;$('#go2').hidden=false;[300,240,180,120].forEach(function(f,i){setTimeout(function(){beep(f,.2)},i*220)});$('#pa').focus()}
+function again(){$('#go2').hidden=true;cd=9;cdu()}
+setInterval(function(){if(!cdOn||dead)return;cd--;cdu();if(cd<=3&&cd>0)beep(900,.04);if(cd<=0)die()},1000);
+new IntersectionObserver(function(es){cdOn=es[0].isIntersecting;if(!cdOn){dead=false;cd=9}cdu()},{threshold:.5}).observe($('#end'));
+$('#coin').onclick=function(){cd=9;add(50);cdu();beep(990,.1);setTimeout(function(){beep(1320,.12)},100)};
+$('#pa').onclick=function(){again();S=0;add(0);got={};$('#ac').textContent=0;$$('.pj.cl').forEach(function(c){c.classList.remove('cl');c.setAttribute('aria-expanded','false');delete c.dataset.d});scrollTo({top:0,behavior:'smooth'})};
+$('#pk').onclick=again;
+addEventListener('keydown',function(e){if(e.key=='Escape'&&!$('#go2').hidden)again()});
 // konami
 var KC=[38,38,40,40,37,39,37,39,66,65],ki=0;
 addEventListener('keydown',function(e){ki=e.keyCode==KC[ki]?ki+1:(e.keyCode==KC[0]?1:0);if(ki==KC.length){ki=0;ach('konami');if(!rm)for(var i=0;i<60;i++){var c=document.createElement('i');c.className='cf';var a=Math.random()*6.28,r=120+Math.random()*320;c.style.cssText='--x:'+Math.cos(a)*r+'px;--y:'+Math.sin(a)*r+'px;background:'+cols[i%4];document.body.appendChild(c);setTimeout(function(c){c.remove()},1400,c)}}});
